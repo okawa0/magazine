@@ -4,45 +4,145 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
-  height: 60px;
-  width: 100%;
   background-color: #fff;
-  z-index: 10;
-  top: 0;
+  width: 200px;
+  height: 100%;
 }
 
 .header-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 30px;
   width: auto;
+  margin-left: 20px;
+  margin-top: 40px;
 }
 
-.gnav-toggle {
+.gnav-menu {
+  list-style: none;
+  padding-left: 20px;
+  padding-top: 70px;
+}
+
+.gnav-item {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.gnav-item a {
+  text-decoration: none;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.gnav-icon {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 150px;
+}
+
+.mv {
+  height: 100vh;
+  width: auto;
+  margin-left: 200px;
+}
+
+.image-container {
   position: relative;
-  top: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
-#gnav-content {
-  position: fixed;
-  right: -250px;
-  transition: right .3s ease;
+.mv-bg {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-#gnav-content.open {
-  right: 0;
+.para {
+  font-size: 32px;
 }
 
-#gnav-input:checked~#gnav-content {
-  right: 0;
+.new-issue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vh;
+  max-width: 400px;
+  transform: translate(-50%, -50%);
 }
+
+.mv-issue {
+  position: absolute;
+  bottom: 150px;
+  left: 260px;
+  color: #000;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.mv-title {
+  position: absolute;
+  bottom: 70px;
+  left: 260px;
+  color: #000;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 35px;
+}
+
+.mv-subtitle {
+  position: absolute;
+  bottom: 12px;
+  left: 260px;
+  color: #000;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 35px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+
+  .header-logo {
+    margin-top: 10px;
+    position: relative;
+    justify-content: center;
+  }
+
+    .gnav-toggle {
+      position: absolute;
+      right: 0;
+    }
+
+    #gnav-box {
+      position: fixed;
+      right: -250px;
+      transition: right .3s ease;
+    }
+
+    #gnav-box.open {
+      right: 0;
+    }
+
+    #gnav-input:checked+#gnav-box {
+      right: 0;
+    }
 
 #gnav-open {
   display: inline-block;
@@ -70,16 +170,13 @@
   bottom: -16px;
 }
 
-#gnav-close {
-  position: fixed;
-  z-index: 90;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  opacity: 0;
-}
+    #gnav-close {
+      display: none;
+    }
+
+    #gnav-input:checked+#gnav-open {
+      display: none;
+    }
 
 #gnav-input:checked~#gnav-close {
   display: block;
@@ -87,32 +184,70 @@
   translate: 0 0;
 }
 
+    #gnav-input:checked~.gnav-menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+    }
 
-.gnav-hidden {
-  display: none;
+    .gnav-hidden {
+      display: none;
+    }
+
+    .gnav-unshown {
+      display: none;
+    }
+
+  .mv {
+    height: calc(100vh - 60px);
+    margin-left: 0;
+    top: 60px;
+    position: absolute;
+    width: 100%;
+    
+  }
+
+  .new-issue {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .mv-issue,
+  .mv-title,
+  .mv-subtitle {
+    left: 20px;
+  }
+
+  .mv-issue {
+    font-size: 50%;
+    margin: 0;
+    bottom: 40%;
+  }
+
+  .mv-title {
+    font-size: 90%;
+    margin: 0;
+    bottom: 20%;
+  }
+
+  .mv-subtitle {
+    font-size: 90%;
+    margin: 0;
+    bottom: 3%;
+  }
+
+  #hamburger {
+    width: 30px;
+  }
 }
 
-.gnav-menu,
-.gnav-icon {
-  list-style: none;
-}
-
-.gnav-menu li a {
-  text-decoration: none;
-}
-
-.mv {
-  position: relative;
-  height: calc(100vh - 60px);
-  margin-top: 60px;
-  overflow: hidden;
-}
-
-.last {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
 }

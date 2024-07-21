@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width initial-scale=1">	
+  <meta name="viewport" content="width=device-width initial-scale=1">
   <title>&amp; Premium (アンド プレミアム) The guide to a better Life</title>
   <meta name="description"
     content="マガジンハウス刊行のクオリティライフ誌『アンドプレミアム』の公式サイトです。“ベターライフ”をテーマに、日々の暮らしを豊かにするファッション＆カルチャー情報を発信しています。">
@@ -10,60 +11,63 @@
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header class="header">
-    <h1>
-      <a href="index.html">
-        <img src="img/header-logo.svg" alt="&amp; Premium" class="header-logo">
-      </a>
-    </h1>
-    <nav class="nav">
-      <div class="gnav-toggle">
+    <a href="index.html">
+      <img src="img/header-logo.svg" alt="&amp; Premium" class="header-logo">
+    </a>
+    <div class="gnav-toggle">
+      <div class="hamburger">
         <input type="checkbox" id="gnav-input" class="gnav-hidden">
-        <label for="gnav-input" id="gnav-open"><img src="img/ico-nav.svg" alt=""></label>
-        <label for="gnav-input" id="gnav-close" class="gnav-unshown"><img src="img/ico-nav-close.svg" alt=""></label>
-        <div id="gnav-content">
-          <ul class="gnav-menu">
-            <li class="gnav-item"><a href="#">magazine</a></li>
-            <li class="gnav-item"><a href="#">lifestyle</a></li>
-            <li class="gnav-item"><a href="#">culture</a></li>
-            <li class="gnav-item"><a href="#">fashion</a></li>
-            <li class="gnav-item"><a href="#">beauty</a></li>
-            <li class="gnav-item"><a href="#">food</a></li>
-            <li class="gnav-item"><a href="#">column</a></li>
-          </ul>
-          <ul class="gnav-icon">
-            <li><a href="https://www.facebook.com/AndPremium2013/"><img src="img/ico-facebook-fill.svg" alt=""></a></li>
-            <li><a href="https://twitter.com/and_premium"><img src="img/ico-twitter-fill.svg" alt=""></a></li>
-            <li><a href="https://www.instagram.com/and_premium/"><img src="img/ico-instagram-line.svg" alt=""></a></li>
-            <li><a href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"><img src="img/ico-youtube-fill.svg" alt=""></a></li>
-          </ul>
-        </div>
+        <label for="gnav-input" id="gnav-open" class="hamburger-menu"><img src="img/ico-nav.svg" alt="" id="hamburger"></label>
+        <label for="gnav-input" id="gnav-close" class="gnav-unshown"><img src="img/ico-nav-close.svg" alt="" id="hamburger"></label>
       </div>
-    </nav>
+      <div id="gnav-box">
+        <ul class="gnav-menu">
+          <li class="gnav-item"><a href="#">magazine</a></li>
+          <li class="gnav-item"><a href="#">lifestyle</a></li>
+          <li class="gnav-item"><a href="#">culture</a></li>
+          <li class="gnav-item"><a href="#">fashion</a></li>
+          <li class="gnav-item"><a href="#">beauty</a></li>
+          <li class="gnav-item"><a href="#">food</a></li>
+          <li class="gnav-item"><a href="#">column</a></li>
+        </ul>
+        <ul class="gnav-icon">
+          <li><a href="https://www.facebook.com/AndPremium2013/"><img src="img/ico-facebook-fill.svg" alt=""></a></li>
+          <li><a href="https://twitter.com/and_premium"><img src="img/ico-twitter-fill.svg" alt=""></a></li>
+          <li><a href="https://www.instagram.com/and_premium/"><img src="img/ico-instagram-line.svg" alt=""></a></li>
+          <li><a href="https://www.youtube.com/channel/UCGwRhr2ARi6xOASbdolc9Ag/featured"><img
+                src="img/ico-youtube-fill.svg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
   </header>
-  <main>
-    <section class="mv">
+
+  <main class="mv">
+    <div class="image-container">
       <img src="img/mv-bg@2x.jpg" alt="メインビジュアル" class="mv-bg">
-      <img src="img/new-issue@2x.png" alt="2022 JUN. &amp;Premium No. 102" class="last">
-      <div>
-        <h1>Life with Flowers &amp; Greens</h1>
-        <p>花を飾る、緑と暮らす。</p>
-      </div>
-    </section>
+      <img src="img/new-issue@2x.png" alt="2022 JUN. &amp;Premium No. 102" class="new-issue">
+    </div>
+    <div class="para">
+      <p class="mv-issue">2022 JUN. &amp;Premium No. 102</p>
+      <h1 class="mv-title">Life with Flowers & Greens</h1>
+      <h1 class="mv-subtitle">花を飾る、緑と暮らす。</h1>
+    </div>
   </main>
   <script>
     document.getElementById('gnav-open').addEventListener('click', function () {
-      document.getElementById('gnav-content').classList.toggle('open');
+      document.getElementById('gnav-box').classList.toggle('open');
       document.getElementById('gnav-open').classList.toggle('gnav-unshown');
       document.getElementById('gnav-close').classList.toggle('gnav-unshown');
     });
 
     document.getElementById('gnav-close').addEventListener('click', function () {
-      document.getElementById('gnav-content').classList.toggle('open');
+      document.getElementById('gnav-box').classList.toggle('open');
       document.getElementById('gnav-open').classList.toggle('gnav-unshown');
       document.getElementById('gnav-close').classList.toggle('gnav-unshown');
     });
   </script>
 </body>
+
 </html>
